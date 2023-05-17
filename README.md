@@ -1,0 +1,1 @@
+# tradplus_mediation_adapters_iOS
