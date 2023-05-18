@@ -164,8 +164,7 @@
     }
     else
     {
-        NSError *loadError = [NSError errorWithDomain:@"Chartboost" code:error.code userInfo:@{NSLocalizedDescriptionKey:@"load fail"}];
-        [self AdLoadFailWithError:loadError];
+        [self AdLoadFailWithError:error];
     }
 }
 
@@ -178,8 +177,7 @@
     }
     else
     {
-        NSError *showError = [NSError errorWithDomain:@"Chartboost" code:error.code userInfo:@{NSLocalizedDescriptionKey:@"show fail"}];
-        [self AdShowFailWithError:showError];
+        [self AdShowFailWithError:error];
     }
 }
 
