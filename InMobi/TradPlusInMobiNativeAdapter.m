@@ -247,7 +247,6 @@
     res.iconImage = self.native.adIcon;
     res.rating = @([self.native.adRating integerValue]);
     self.waterfallItem.adRes = res;
-    MSLogTrace(@"InMobi.rating--%@",res.rating);
     if(self.isC2SBidding)
     {
         [self finishC2SBidding];

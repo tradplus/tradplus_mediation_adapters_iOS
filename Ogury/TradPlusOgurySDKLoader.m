@@ -108,7 +108,6 @@
     {
         if ([MSConsentManager sharedManager].currentStatus != MSBoolUnknown)
             [OguryChoiceManagerExternal setTransparencyAndConsentStatus:[[MSConsentManager sharedManager] canCollectPersonalInfo] origin:@"TradPlus" assetKey:assetKey];
-        MSLogTrace(@"Ogury set gdpr with %@",@([[MSConsentManager sharedManager] canCollectPersonalInfo]));
     }
 }
 

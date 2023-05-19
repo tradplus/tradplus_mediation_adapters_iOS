@@ -107,7 +107,6 @@
     {
         BOOL canCollectPersonalInfo = [[MSConsentManager sharedManager] canCollectPersonalInfo];
         [WindAds setUserGDPRConsentStatus:canCollectPersonalInfo ? WindConsentAccepted : WindConsentDenied];
-        MSLogTrace(@"Sigmob set gdpr %@",@(canCollectPersonalInfo));
     }
     
     int ccpa = (int)[[NSUserDefaults standardUserDefaults] integerForKey:gTPCCPAStorageKey];
@@ -115,7 +114,6 @@
     {
         BOOL ccpaStatus = (ccpa == 2);
         [WindAds updateCCPAStatus:ccpaStatus ? WindCCPAAccepted : WindCCPADenied];
-        MSLogTrace(@"Sigmob set ccpa  setDoNotSell %@",@(ccpaStatus));
     }
     
     int coppa = (int)[[NSUserDefaults standardUserDefaults] integerForKey:gTPCOPPAStorageKey];
@@ -123,7 +121,6 @@
     {
         BOOL isChild = (coppa == 2);
         [WindAds setIsAgeRestrictedUser:isChild ? WindAgeRestrictedStatusYES : WindAgeRestrictedStatusNO];
-        MSLogTrace(@"Sigmob set coppa %@",@(isChild));
     }
     
     WindAdOptions *options = [[WindAdOptions alloc] initWithAppId:appID appKey:appKey];

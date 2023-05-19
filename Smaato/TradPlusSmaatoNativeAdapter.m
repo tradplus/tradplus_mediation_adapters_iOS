@@ -174,7 +174,6 @@
         }
     }
     self.waterfallItem.adRes = res;
-    MSLogTrace(@"Smaato.rating--%@",res.rating);
     [self AdLoadFinsh];
 }
 

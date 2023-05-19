@@ -13,9 +13,6 @@
     [YMAMobileAds setUserConsent: bo];
     
     [TradPlusYandexSDKSetting showAdapterInfo];
-    
-    MSLogTrace(@"Yandex set gdpr:%d", bo);
-    
 }
 
 + (void)showAdapterInfo

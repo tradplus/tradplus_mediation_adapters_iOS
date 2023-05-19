@@ -111,7 +111,6 @@
             consent = @"1";
         }
         dic[@"npa"] = consent;
-        MSLogTrace(@"GoogleIMA set gdpr with %@",consent);
     }
     int ccpa = (int)[[NSUserDefaults standardUserDefaults] integerForKey:gTPCCPAStorageKey];
     if(ccpa > 0)
@@ -122,7 +121,6 @@
             consent = @"1";
         }
         dic[@"rdp"] = consent;
-        MSLogTrace(@"GoogleIMA set ccpa with %@",consent);
     }
     int coppa = (int)[[NSUserDefaults standardUserDefaults] integerForKey:gTPCOPPAStorageKey];
     if (coppa != 0)
@@ -134,7 +132,6 @@
             consent = @"1";
         }
         dic[@"tfcd"] = consent;
-        MSLogTrace(@"GoogleIMA set coppa with %@",@(isChild));
     }
     if(self.waterfallItem.extraInfoDictionary != nil
        && [self.waterfallItem.extraInfoDictionary valueForKey:@"localParams"])
@@ -162,13 +159,11 @@
                     newDictionary[key] = value;
                 }
                 [dic addEntriesFromDictionary:newDictionary];
-                MSLogTrace(@"GoogleIMA parameters %@",newDictionary);
             }
         }
     }
 
     adTagUrl = [self urlStringWithDic:dic];
-    MSLogTrace(@"adTagUrl--%@",adTagUrl);
     
     self.adsLoader = [[IMAAdsLoader alloc] initWithSettings:nil];
     self.adsLoader.delegate = self;

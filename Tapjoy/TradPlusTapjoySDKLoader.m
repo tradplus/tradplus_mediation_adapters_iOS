@@ -90,14 +90,12 @@
         {
             [[TJPrivacyPolicy sharedInstance] setUSPrivacy:@"1YYY"];
         }
-        MSLogTrace(@"Tapjoy set ccpa with %d",ccpa);
     }
     
     int coppa = (int)[[NSUserDefaults standardUserDefaults] integerForKey:gTPCOPPAStorageKey];
     if (coppa != 0)
     {
         [[TJPrivacyPolicy sharedInstance] setBelowConsentAge:coppa == 2];
-        MSLogTrace(@"Tapjoy set coppa with %d",coppa);
     }
     
     if([MSConsentManager sharedManager].isGDPRApplicable == MSBoolYes)
@@ -108,7 +106,6 @@
             consent = @"1";
         }
         [[TJPrivacyPolicy sharedInstance] setUserConsent:consent];
-        MSLogTrace(@"Tapjoy set gdpr with %@",consent);
     }
     
     NSMutableDictionary *connectOptions = [[NSMutableDictionary alloc] init];

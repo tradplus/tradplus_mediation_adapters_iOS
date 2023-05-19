@@ -217,7 +217,6 @@
     MSLogTrace(@"%s", __PRETTY_FUNCTION__);
     if(reward.isCompeltedView)
     {
-        MSLogTrace(@"AdRewarded");
         self.shouldReward = YES;
     }
 }

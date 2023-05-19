@@ -240,7 +240,6 @@
         res.mediaView = [[UIView alloc] init];
     }
     self.waterfallItem.adRes = res;
-    MSLogTrace(@"Yandex.rating--%@",res.rating);
     [self AdLoadFinsh];
 }
 

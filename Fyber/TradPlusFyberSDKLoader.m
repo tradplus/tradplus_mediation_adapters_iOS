@@ -82,7 +82,6 @@
     {
         BOOL canCollectPersonalInfo = [[MSConsentManager sharedManager] canCollectPersonalInfo];
         IASDKCore.sharedInstance.GDPRConsent = canCollectPersonalInfo ? IAGDPRConsentTypeGiven : IAGDPRConsentTypeDenied;
-        MSLogTrace(@"Fyber set gdpr %@",@(canCollectPersonalInfo));
     }
     
     int ccpa = (int)[[NSUserDefaults standardUserDefaults] integerForKey:gTPCCPAStorageKey];
@@ -90,13 +89,10 @@
     {
         IASDKCore.sharedInstance.CCPAString = @"1YNN";
     }
-    MSLogTrace(@"fyber set ccpa:%d", ccpa);
-    
     int lgpd = (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"tradplus_consent_lgpd"];
     if (lgpd > 0)
     {
         IASDKCore.sharedInstance.LGPDConsent = lgpd == 2 ? IALGPDConsentTypeGiven:IALGPDConsentTypeDenied;
-        MSLogTrace(@"fyber set lgpd:%d", lgpd);
     }
     
     __weak typeof(self) weakSelf = self;

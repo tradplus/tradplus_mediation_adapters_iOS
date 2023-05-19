@@ -218,7 +218,6 @@
     res.rating = @(nativeAd.rating);
     self.nativeAd = nativeAd;
     self.waterfallItem.adRes = res;
-    MSLogTrace(@"Sigmob.rating--%@",res.rating);
     [self AdLoadFinsh];
 }
 

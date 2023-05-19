@@ -83,7 +83,6 @@
     if (coppa > 0)
     {
         SmaatoSDK.requireCoppaCompliantAds = (coppa == 2);
-        MSLogTrace(@"smaato set coppa:%d", coppa);
     }
     
     SMAConfiguration *config = [[SMAConfiguration alloc] initWithPublisherId:appID];
@@ -96,7 +95,6 @@
     if (lgpd > 0)
     {
         SmaatoSDK.isLGPDConsentEnabled = @(lgpd == 2);
-        MSLogTrace(@"smaato set lgpd:%d", lgpd);
     }
     
     self.isIniting = NO;

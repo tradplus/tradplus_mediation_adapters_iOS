@@ -72,7 +72,6 @@
         return;
     }
     [[TradPlusBaiduSDKSetting sharedInstance] setPersonalizedAd];
-    MSLogTrace(@"%s, type:%ld", __PRETTY_FUNCTION__, (long)item.full_screen_video);
     switch (item.full_screen_video)
     {
         case 2:

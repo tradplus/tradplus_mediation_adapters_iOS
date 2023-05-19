@@ -93,7 +93,6 @@
     {
         BOOL canCollectPersonalInfo = [[MSConsentManager sharedManager] canCollectPersonalInfo];
         [[STAStartAppSDK sharedInstance] setUserConsent:canCollectPersonalInfo forConsentType:@"pas" withTimestamp:[[NSDate date] timeIntervalSince1970]];
-        MSLogTrace(@"StartApp set gdpr %@",@(canCollectPersonalInfo));
     }
     
     int ccpa = (int)[[NSUserDefaults standardUserDefaults] integerForKey:gTPCCPAStorageKey];
@@ -109,7 +108,6 @@
                 [extras setObject:@"1YYN" forKey:@"IABUSPrivacy_String"];
             }
         }];
-        MSLogTrace(@"StartApp set ccpa:%d", ccpa);
     }
     
     self.isIniting = NO;

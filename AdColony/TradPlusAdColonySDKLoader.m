@@ -127,7 +127,6 @@
             consent = @"1";
         }
         [appOptions setPrivacyConsentString:consent forType:ADC_GDPR];
-        MSLogTrace(@"AdColony set gdpr with %@",consent);
     }
     int ccpa = (int)[[NSUserDefaults standardUserDefaults] integerForKey:gTPCCPAStorageKey];
     if(ccpa > 0)
@@ -139,13 +138,11 @@
             consent = @"1";
         }
         [appOptions setPrivacyConsentString:consent forType:ADC_CCPA];
-        MSLogTrace(@"AdColony set ccpa with %@",consent);
     }
     int coppa = (int)[[NSUserDefaults standardUserDefaults] integerForKey:gTPCOPPAStorageKey];
     if(coppa == 2)
     {
         [appOptions setPrivacyFrameworkOfType:ADC_COPPA isRequired:YES];
-        MSLogTrace(@"AdColony set coppa");
     }
     __weak typeof(self) weakSelf = self;
     [AdColony configureWithAppID:appID

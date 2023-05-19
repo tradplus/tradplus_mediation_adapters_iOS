@@ -59,7 +59,6 @@
     if (ccpa != 0)
     {
         BOOL isDoNotSell = (ccpa == 1);
-        MSLogTrace(@"InMobi set CPRA with %d",ccpa);
         return @{@"do_not_sell":isDoNotSell ? @"true":@"false"};
     }
     else
@@ -100,14 +99,12 @@
     }
     NSMutableDictionary *consentdict = [[NSMutableDictionary alloc] init];
     [consentdict setObject:gdprStr forKey:IM_GDPR_CONSENT_AVAILABLE];
-    MSLogTrace(@"InMobi set gdpr with %@",gdprStr);
     
     int coppa = (int)[[NSUserDefaults standardUserDefaults] integerForKey:gTPCOPPAStorageKey];
     if (coppa != 0)
     {
         BOOL isChild = (coppa == 2);
         [IMSdk setIsAgeRestricted:isChild];
-        MSLogTrace(@"InMobi set coppa with %@",@(isChild));
     }
     
     __weak typeof(self) weakSelf = self;

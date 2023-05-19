@@ -215,7 +215,6 @@
         res.rating = self.adDetail.rating;
         res.adChoiceImage = self.adDetail.policyImage;
         self.waterfallItem.adRes = res;
-        MSLogTrace(@"StartApp.rating--%@",res.rating);
         [self AdLoadFinsh];
     }
     else
